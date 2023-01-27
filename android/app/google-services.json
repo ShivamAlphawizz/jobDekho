@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "608709348970",
+    "project_id": "jobdekho-fab45",
+    "storage_bucket": "jobdekho-fab45.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608709348970:android:91ee232953a5d1b28e8413",
+        "android_client_info": {
+          "package_name": "com.jobdekho"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608709348970-8h6oe05akt75sbmjlh4n4jetk5vip0oo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp_HUjj0paerIujSskh2FWpZ93P6h1occ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608709348970-8h6oe05akt75sbmjlh4n4jetk5vip0oo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
