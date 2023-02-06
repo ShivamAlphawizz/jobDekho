@@ -2,7 +2,7 @@
 
 class ApiPath{
 
-  static const String baseUrl = "https://developmentalphawizz.com/job_portal/api/";
+  static const String baseUrl = "https://jobdekho.net/api/";
 
   static const String sign_up = baseUrl+'signUp';
   static const String login = baseUrl+'login';

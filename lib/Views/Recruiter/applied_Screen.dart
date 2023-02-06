@@ -33,7 +33,7 @@ class _applied_ScreenState extends State<applied_Screen> {
     request.fields.addAll({
       'user_id': "${userid}"
     });
-    print("param here ${request.fields}");
+    print("param here ${request.fields} and ${ApiPath.baseUrl}applied_lists");
     request.headers.addAll(headers);
     http.StreamedResponse response = await request.send();
     if (response.statusCode == 200) {

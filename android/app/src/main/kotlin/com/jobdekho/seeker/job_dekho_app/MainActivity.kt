@@ -1,4 +1,4 @@
-package com.jobdekho
+package com.jobdekhoindia
 
 import io.flutter.embedding.android.FlutterActivity
 

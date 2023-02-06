@@ -129,7 +129,7 @@ String newValue = "";
     final size = MediaQuery.of(context).size;
     print(" path here now ${widget.model.user.resume}");
     var vs = widget.model.user.resume.toString().split("https://developmentalphawizz.com/job_portal/uploads/resume/");
-    print("oko ${vs[1]}");
+
     return SafeArea(child: Scaffold(
       backgroundColor: primaryColor,
       appBar: AppBar(
@@ -960,7 +960,7 @@ String newValue = "";
             Align(
               child: CustomButtonWithIcon(buttonText: "Download", buttonIcon: Image.asset('assets/ContactUsAssets/downloadIcon.png', color: primaryColor, scale: 1.4,),onTap: (){
                 createFolderInAppDocDir('JobDekho');
-                downloadFile("${widget.model.user.resume.toString()}", "${vs[1]}");
+                downloadFile("${widget.model.user.resume.toString()}", "Resume");
               },),
             )
           ],

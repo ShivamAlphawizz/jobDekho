@@ -29,7 +29,7 @@ class UpdateJobPostScreen extends StatefulWidget {
 
 class _UpdateJobPostScreenState extends State<UpdateJobPostScreen> {
 
-  String? jobType,selectedDesignation,qualification,passingYear,experience,jobRoles,specialization;
+  String? jobType,selectedDesignation,qualification,passingYear,experience,jobRoles,specialization,location;
 
   TextEditingController minController  =  TextEditingController();
   TextEditingController maxController = TextEditingController();
@@ -69,7 +69,8 @@ var minSalary,maxSalary,vaccancy;
     jobType = viewJobModel!.data!.jobType.toString();
     selectedDesignation = viewJobModel!.data!.designation.toString();
     qualification = viewJobModel!.data!.qualification.toString();
-    addressController = TextEditingController(text: viewJobModel!.data!.location);
+   // addressController = TextEditingController(text: viewJobModel!.data!.location);
+      location = viewJobModel!.data!.location.toString();
     passingYear = viewJobModel!.data!.passingYear.toString();
     experience = viewJobModel!.data!.experience.toString();
       specialization = viewJobModel!.data!.specialization.toString();
@@ -141,7 +142,7 @@ var minSalary,maxSalary,vaccancy;
       'job_role': '$jobRoles',
       'end_date': '$lastDateApply',
       'hiring_process': '$hiringData',
-      'location': addressController.text,
+      'location': location.toString(),
       'specialization': specialization.toString(),
       'description': descriptionController.text,
       "id":"${widget.id}"
@@ -315,15 +316,39 @@ var minSalary,maxSalary,vaccancy;
                 SizedBox(height: 10,),
                 /// Location
                 Text("Location",style: TextStyle(color: greyColor1,fontSize: 14,fontWeight: FontWeight.w500),),
-                TextFormField(
-                  controller: addressController ,
-                  decoration: InputDecoration(
-                      hintText: "Location",
-                      border: UnderlineInputBorder(
-                          borderSide: BorderSide(color: greyColor1)
-                      )
-                  ),
+                DropdownButton(
+                  isExpanded: true,
+                  // Initial Value
+                  value: location,
+                  hint: Text("Location"),
+                  // Down Arrow Icon
+                  icon: const Icon(Icons.keyboard_arrow_down),
+
+                  // Array list of items
+                  items: addJobDataModel!.data!.locations!.map((items) {
+                    return DropdownMenuItem(
+                      value: items.name.toString(),
+                      child: Text(items.name.toString()),
+                    );
+                  }).toList(),
+                  // After selecting the desired option,it will
+                  // change button value to selected value
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      location = newValue!;
+                    });
+                  },
                 ),
+
+                // TextFormField(
+                //   controller: addressController ,
+                //   decoration: InputDecoration(
+                //       hintText: "Location",
+                //       border: UnderlineInputBorder(
+                //           borderSide: BorderSide(color: greyColor1)
+                //       )
+                //   ),
+                // ),
                 SizedBox(height: 20,),
                 /// passing year
                 Text("Passing Year",style: TextStyle(color: greyColor1,fontSize: 14,fontWeight: FontWeight.w500),),
